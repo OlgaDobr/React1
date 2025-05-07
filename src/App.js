@@ -1,25 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import TestComponent from './containers/newTestComponent';
+import ClassComponent from './containers/classComponent';
+import CurrentData from './containers/currentDate';
+import CurrentTime from './containers/currentTime';
 
 function App() {
+  const someFunc = (value) => {
+    alert(value)
+  }
   return (
+    <>
+    <AnotherOneComponent/>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      current time
+      <TestComponent title={"button 1"} color={'red'} onclick={someFunc}/>
+      <TestComponent title={"button 2"} color={'green'} onclick={someFunc}/>
+      <TestComponent title={"button 3"} color={'pink'}/>
+      <TestComponent title={"button 4"} color={'blue'}/>
+
+      <ClassComponent/>
     </div>
+    <div> no class</div>
+    <CurrentData/>
+    <CurrentTime/>
+    </>
   );
 }
 
