@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <>
-    <AnotherOneComponent/>
+    {/* <AnotherOneComponent/> */}
     <div className="App">
       current time
       <TestComponent title={"button 1"} color={'red'} onclick={someFunc}/>
@@ -19,7 +19,7 @@ function App() {
       <TestComponent title={"button 3"} color={'pink'}/>
       <TestComponent title={"button 4"} color={'blue'}/>
 
-      <ClassComponent/>
+      <ClassComponent startValue={5} incValue={3}/>
     </div>
     <div> no class</div>
     <CurrentData/>

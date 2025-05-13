@@ -1,17 +1,20 @@
-import react from "react";
+import react, { useState } from "react";
 const TestComponent = function(props) {
-    let title = props.title
-    let color = props.color
-    const clickHandler = () => {
-        if (typeof props.onclick === 'function') {
-            props.onclick("props color is")
+    
+  const [bgcolor, setBgColor] = useState(props.color) 
+    const btnClickFn = (val) => {
+        if (bgcolor === 'green') {
+            setBgColor(props.color)
+        } else {
+            setBgColor('green')
         }
-        props
-        alert (clickHandler)
+        console.log(bgcolor)
     }
     return (
-        <div>
-            <button>onClick[clickHandler] test button</button>
+        <div className={"header"} style={{color: bgcolor}} onClick={btnClickFn}>
+
+            header
+            
         </div>
     )
 }
