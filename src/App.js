@@ -1,30 +1,41 @@
+import react from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TestComponent from './containers/newTestComponent';
+import AnotherOneComponent from './containers/anotherOneComponent';
 import ClassComponent from './containers/classComponent';
-import CurrentData from './containers/currentDate';
-import CurrentTime from './containers/currentTime';
+import CurrentDate from './containers/CurrentDate';
+import CurrentTime from './containers/CurrentTime';
 
-function App() {
+function App(props) {
   const someFunc = (value) => {
     alert(value)
   }
+
+  const someFunc1 = (value) => {
+    console.log(value)
+  }
+  
   return (
     <>
-    {/* <AnotherOneComponent/> */}
-    <div className="App">
-      current time
-      <TestComponent title={"button 1"} color={'red'} onclick={someFunc}/>
-      <TestComponent title={"button 2"} color={'green'} onclick={someFunc}/>
-      <TestComponent title={"button 3"} color={'pink'}/>
-      <TestComponent title={"button 4"} color={'blue'}/>
+       <AnotherOneComponent title={'button'} color={'grey'}/>
+      <div className="App">
+        Current time
+        <TestComponent  title={"button 1"} color={'red'} onclick={someFunc}/>
+        <TestComponent  title={"button 2"} color={'green'} onclick={someFunc1}/>
 
-      <ClassComponent startValue={5} incValue={3}/>
-    </div>
-    <div> no class</div>
-    <CurrentData/>
-    <CurrentTime/>
+        <TestComponent  title={"button 3"} color={'pink'}/>
+
+        <TestComponent  title={"click me"} color={'blue'} />
+
+        <ClassComponent  startValue={3} incValue={5}/>
+      </div>
+      <div> no class </div>
+     <CurrentDate />
+     <CurrentTime />
+     
     </>
+    
   );
 }
 
