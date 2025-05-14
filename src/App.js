@@ -6,7 +6,8 @@ import AnotherOneComponent from './containers/anotherOneComponent';
 import ClassComponent from './containers/classComponent';
 import CurrentDate from './containers/CurrentDate';
 import CurrentTime from './containers/CurrentTime';
-
+import  Writers  from './containers/Writers';
+import Form from './containers/Form';
 function App(props) {
   const someFunc = (value) => {
     alert(value)
@@ -20,15 +21,17 @@ function App(props) {
     <>
        <AnotherOneComponent title={'button'} color={'grey'}/>
       <div className="App">
+        <Form />
         Current time
-        <TestComponent  title={"button 1"} color={'red'} onclick={someFunc}/>
+        <Writers/>
+        {/* //<TestComponent  title={"button 1"} color={'red'} onclick={someFunc}/>
         <TestComponent  title={"button 2"} color={'green'} onclick={someFunc1}/>
 
         <TestComponent  title={"button 3"} color={'pink'}/>
 
         <TestComponent  title={"click me"} color={'blue'} />
 
-        <ClassComponent  startValue={3} incValue={5}/>
+        <ClassComponent  startValue={3} incValue={5}/>// */}
       </div>
       <div> no class </div>
      <CurrentDate />
